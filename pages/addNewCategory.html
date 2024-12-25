@@ -1,0 +1,33 @@
+<div>
+    <h1 class="header_main">Add new category</h1>
+</div>
+<div>
+    <form method="post" onsubmit="submitCategory(event)" id="category">
+        <label for="name-category">
+            <p class="placeholder placeholder-name-category">category name</p>
+            <p class="error-alert hidden"></p>
+        </label>
+        <input required pattern="[A-Za-zа-яА-Я0-9 ]{1,20}" oninput="validation(event)" type="text" id="name-category" name="name" class="form" onfocusin="startAnimationForward('name-category', '.placeholder-name-category')" onfocusout="startAnimationBackward('name-category', '.placeholder-name-category')">
+        <p style="margin-top: 50px; font-size: 24px">Choose icon:</p>
+        <div class="icons-container">
+
+        </div>
+        <label for="submit-category" class="submit">Add category</label>
+        <input type="submit" id="submit-category" class="hidden">
+    </form>
+</div>
+<div class="windowWrapper-icons" onclick="closeIconWindow(event)">
+    <div class="window-icons">
+        <div class="header_window">
+            <p>Icons</p>
+            <div class="close-window" onclick="closeIconWindow(event)">
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+        <div class="icons-container-window"></div>
+    </div>
+</div>
+<script src="scripts/formAnimation.js">
+    addEvent("category");
+</script>
+<script src="scripts/icons_load.js"></script>

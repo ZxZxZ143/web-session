@@ -1,0 +1,22 @@
+<div class="logIn">
+    <div class="header_main">
+        <h1>Log in</h1>
+    </div>
+    <form id="login" method="post" onsubmit="submitLogin(event)">
+        <label for="login-login">
+            <p class="placeholder-login-login placeholder">login</p>
+        </label>
+        <input onchange="addValidation(event)" onclick="initData()" required pattern="[A-Za-z0-9]{3,16}" oninput="validation(event)" name="login" type="text" id="login-login" class="form" onfocusin="startAnimationForward('login-login', '.placeholder-login-login')" onfocusout="startAnimationBackward('login-login', '.placeholder-login-login')">
+        <label for="password-login">
+            <p class="placeholder-password-login placeholder">password</p>
+        </label>
+        <input onchange="addValidation(event)" required pattern="[^а-яА-Я]{3,16}" title="Password must contain only latin letters, numbers and special characters" oninput="validation(event)" name="password" type="password" id="password-login" class="form" onfocusin="startAnimationForward('password-login', '.placeholder-password-login')" onfocusout="startAnimationBackward('password-login', '.placeholder-password-login')">
+        <label for="submit-login" class="submit">Log in!</label>
+        <input oninput="addValidation(event)" id="submit-login" type="submit" class="hidden">
+        <p class="notification">Doesn`t have an account? <span class="move" onclick="goToPage('registration')">Registration!</span></p>
+    </form>
+    <script src="scripts/logIn.js"></script>
+    <script src="scripts/formAnimation.js">
+        addEvent("login");
+    </script>
+</div>

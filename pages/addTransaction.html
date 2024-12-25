@@ -1,0 +1,75 @@
+<div>
+    <h1 class="header_main">Add new transaction</h1>
+</div>
+<div>
+    <form method="post" onsubmit="submitNewTransaction(event)" id="transaction">
+        <label for="price"></label>
+        <div class="price-container">
+            <input oninput="addValidation(event)" name="price" placeholder="0" required pattern="{1,20}" id="price"
+                   class="form-transaction" type="number">
+            <p>USD</p>
+        </div>
+        <div>
+            <p class="hint">Category: </p>
+            <div class="icons-container category-transaction">
+
+            </div>
+            <div class="date">
+                <input required id="today" type="radio" name="date" checked>
+                <label for="today">
+                    <div class="today">
+                        <p>today</p>
+                        <p class="todayDate"></p>
+                    </div>
+                </label>
+                <input required type="radio" name="date" id="yesterday">
+                <label for="yesterday">
+                    <div class="yesterday">
+                        <p>yesterday</p>
+                        <p class="yesterdayDate"></p>
+                    </div>
+                </label>
+                <input required type="radio" name="date" id="custom">
+                <label for="custom" onclick="datePicker()">
+                    <div id="datePicker" style="visibility: hidden; position: absolute"></div>
+                    <div class="custom">
+                        <p>custom</p>
+                        <p class="customDate"></p>
+                    </div>
+                </label>
+
+            </div>
+        </div>
+        <div class="notRequired">
+            <div>
+                <p class="hint">Teg:</p>
+                <label for="teg"></label>
+                <input type="text" class="form-transaction"
+                       id="teg" name="teg">
+            </div>
+            <div>
+                <p class="hint">Comment:</p>
+                <label for="comment"></label>
+                <textarea type="text" class="form-transaction"
+                          id="comment" name="comment"></textarea>
+            </div>
+            <label for="submit-transaction" class="submit">Add transaction</label>
+            <input id="submit-transaction" class="hidden" type="submit">
+        </div>
+    </form>
+</div>
+<div class="windowWrapper-icons" onclick="closeIconWindow(event)">
+    <div class="window-icons">
+        <div class="header_window">
+            <p>Icons</p>
+            <div class="close-window" onclick="closeIconWindow(event)">
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+        <div class="icons-container-window"></div>
+    </div>
+</div>
+<script src="scripts/formAnimation.js">
+    addEventTransaction();
+</script>
+<script src="scripts/addNewTransaction.js"></script>

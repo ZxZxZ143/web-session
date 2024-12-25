@@ -1,0 +1,27 @@
+<div class="registration">
+    <div class="header_main">
+        <h1>Registration</h1>
+    </div>
+    <form id="registration" method="post" onsubmit="submitRegistration(event)">
+        <label for="name-registration">
+            <p class="placeholder-name-registration placeholder">name</p>
+        </label>
+        <input onchange="addValidation(event)" required pattern="[A-Za-z0-9а-яА-Я]{3,16}" oninput="validation(event)" name="name" type="text" id="name-registration" class="form" onfocusin="startAnimationForward('name-registration', '.placeholder-name-registration')" onfocusout="startAnimationBackward('name-registration', '.placeholder-name-registration')">
+        <label for="login-registration">
+            <p class="placeholder-login-registration placeholder">login</p>
+        </label>
+        <input onchange="addValidation(event)" required pattern="[A-Za-z0-9]{3,16}" oninput="validation(event)" name="login" type="text" id="login-registration" class="form" onfocusin="startAnimationForward('login-registration', '.placeholder-login-registration')" onfocusout="startAnimationBackward('login-registration', '.placeholder-login-registration')">
+        <label for="password-registration">
+            <p class="placeholder-password-registration placeholder">password</p>
+        </label>
+        <input onchange="addValidation(event)" required pattern="[^а-яА-Я]{3,16}" title="Password must contain only latin letters, numbers and special characters" oninput="validation(event)" name="password" type="password" id="password-registration" class="form" onfocusin="startAnimationForward('password-registration', '.placeholder-password-registration')" onfocusout="startAnimationBackward('password-registration', '.placeholder-password-registration')">
+        <label for="submit-registration" class="submit">Sign in!</label>
+        <input type="submit" id="submit-registration" class="hidden">
+        <p class="notification">Already have an account? <span class="move" onclick="goToPage('logIn')">Log in!</span></p>
+    </form>
+    <script src="scripts/registration.js"></script>
+    <script src="scripts/formAnimation.js">
+        addEvent("registration");
+    </script>
+</div>
+

@@ -1,0 +1,17 @@
+<div>
+    <h1 class="header_main">Wallet</h1>
+</div>
+<div class="balance-container">
+    <p>balance: <span class="balance"></span> USD</p>
+    <form method="post" class="income" onsubmit="submitIncome(event)">
+        <p>Add income</p>
+        <label for="income"></label>
+        <div class="price-container">
+            <input id="income" name="income" required type="number" class="form-transaction">
+            <p>USD</p>
+        </div>
+        <label for="submit-income" class="submit">Add income</label>
+        <input id="submit-income" type="submit" class="hidden">
+    </form>
+</div>
+<script src="scripts/load_balance.js"></script>

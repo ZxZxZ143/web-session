@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "php": "^1.1.0",
+    "puppeteer": "^23.11.1"
+  }
+}

@@ -1,0 +1,30 @@
+<div class="dashboard">
+    <div class="header_main">
+        <h1>Wallet(USD)</h1>
+        <ul class="pages_main">
+            <li><a><i class="material-icons">history</i></a></li>
+            <li><a><i class="material-icons">insert_chart</i></a></li>
+            <li><a><i class="material-icons">settings</i></a></li>
+        </ul>
+    </div>
+    <div class="main_info">
+        <div class="transactions_add">
+            <p>Transaction</p>
+            <button class="transaction_add_button" onclick="goToPage(document.cookie.indexOf('=') !== -1?  'addTransaction' : 'logIn')">Add Transaction</button>
+        </div>
+        <div class="transactions_container">
+            <div class="transactions">
+                <div class="logIn_alert">
+                    <p class="logInNotification">Log in to white your expenses</p>
+                    <button class="logInRedirect submit" onclick="goToPage('logIn')">Log in!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal_window_bg" onclick="closeComment()">
+    <div>
+        <p class="comment"></p>
+    </div>
+</div>
+<script src="scripts/expenses_load.js"></script>
